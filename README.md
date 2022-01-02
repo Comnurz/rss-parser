@@ -29,6 +29,10 @@ Install the requirements
 ```shell
 $ pip install -r src/requirements.txt
 ```
+Create db file 
+```shell
+touch src/rss-parser.db
+```
 
 You can run the app programmatically from main.py or with uvicorn.
 
