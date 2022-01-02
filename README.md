@@ -73,6 +73,8 @@ curl -X 'GET' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdHJpbmciLCJleHAiOjE2NDExNTUxODV9.DTGiZO0D8EnCSaHGK0MvNLNKiRVYiC1jRortsgkSefI'
 ```
+### Swagger doc
+http://host:port/docs
 
 ### Code Styling
 
