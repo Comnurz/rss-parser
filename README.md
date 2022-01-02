@@ -7,7 +7,7 @@
 ## Installation
 
 ### Docker way
-
+!Update docker file secret env variable
 Build Docker image
 ```sh
 $ docker build -t rss:latest .
@@ -33,6 +33,7 @@ Create db file
 ```shell
 touch src/rss-parser.db
 ```
+You need to add "secret" variable to your env before to run.
 
 You can run the app programmatically from main.py or with uvicorn.
 
