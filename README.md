@@ -45,6 +45,33 @@ if __name__ == "__main__":
 ```shell
 uvicorn main:app --reload --host "host" --port "port"
 ```
+## Usage
+### Create user
+```shell
+curl -X 'POST' \
+  'http://127.0.0.1:8000/users/users/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "email": "user@mail.com",
+  "password": "secretpass"
+}'
+```
+### Get JWT Token
+```shell
+curl -X 'POST' \
+  'http://127.0.0.1:8000/token' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d 'grant_type=&username=user@mail.com&password=secretpass&scope=&client_id=&client_secret='
+```
+### Search rss url
+```shell
+curl -X 'GET' \
+  'http://127.0.0.1:8000/items/item/?url=https%3A%2F%2Fwww.nasa.gov%2Frss%2Fdyn%2Fbreaking_news.rss' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdHJpbmciLCJleHAiOjE2NDExNTUxODV9.DTGiZO0D8EnCSaHGK0MvNLNKiRVYiC1jRortsgkSefI'
+```
 
 ### Code Styling
 
