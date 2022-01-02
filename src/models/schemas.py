@@ -20,7 +20,7 @@ class Item(ItemBase):
 
 
 class UserBase(BaseModel):
-    email: str
+    username: str
 
 
 class UserCreate(UserBase):
@@ -28,7 +28,7 @@ class UserCreate(UserBase):
 
 
 class User(UserBase):
-    email: str
+    username: str
 
     class Config:
         orm_mode = True

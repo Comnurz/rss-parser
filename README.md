@@ -54,7 +54,7 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "email": "user@mail.com",
+  "username": "username",
   "password": "secretpass"
 }'
 ```
@@ -64,7 +64,7 @@ curl -X 'POST' \
   'http://127.0.0.1:8000/token' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'grant_type=&username=user@mail.com&password=secretpass&scope=&client_id=&client_secret='
+  -d 'grant_type=&username=username&password=secretpass&scope=&client_id=&client_secret='
 ```
 ### Search rss url
 ```shell

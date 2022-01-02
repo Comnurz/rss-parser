@@ -13,16 +13,16 @@ from jose import JWTError
 from utils.database import get_db
 
 
-def authenticate_user(email: str, password: str, db: Session):
+def authenticate_user(username: str, password: str, db: Session):
     """
-    Authenticate user with email and password
+    Authenticate user with username and password
 
-    :param email: str
+    :param username: str
     :param password: str
     :param db: Session
     :return: User or False
     """
-    user = crud.get_user_by_email(db, email)
+    user = crud.get_user_by_username(db, username)
     if not user:
         return False
     if not verify_password(password, user.hashed_password):
@@ -91,7 +91,7 @@ async def get_current_user(
         TokenData(username=username)
     except JWTError:
         raise credentials_exception
-    user = crud.get_user_by_email(db, email=username)
+    user = crud.get_user_by_username(db, username=username)
     if user is None:
         raise credentials_exception
     return user

@@ -18,15 +18,15 @@ def get_user(db: Session, user_id: int) -> User:
     return db.query(models.User).filter(models.User.id == user_id).first()
 
 
-def get_user_by_email(db: Session, email: str) -> User:
+def get_user_by_username(db: Session, username: str) -> User:
     """
-    Get user by email
+    Get user by username
 
     :param db: Session
-    :param email: str
+    :param username: str
     :return: User
     """
-    return db.query(models.User).filter(models.User.email == email).first()
+    return db.query(models.User).filter(models.User.username == username).first()
 
 
 def get_users(db: Session, skip: int = 0, limit: int = 100) -> User:
@@ -50,7 +50,7 @@ def create_user(db: Session, user: UserCreate) -> User:
     :return: User
     """
     fake_hashed_password = pwd_context.hash(user.password)
-    db_user = models.User(email=user.email, hashed_password=fake_hashed_password)
+    db_user = models.User(username=user.username, hashed_password=fake_hashed_password)
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
